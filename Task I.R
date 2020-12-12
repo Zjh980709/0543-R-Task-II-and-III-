@@ -1,8 +1,4 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
+
 #factoextra to determine the optimal number clusters for a given clustering methods and for data visualization.
 #NbClust for computing about 30 methods at once, in order to find the optimal number of clusters.
 library(factoextra)
