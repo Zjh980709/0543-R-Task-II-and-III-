@@ -25,7 +25,7 @@ s.eigen$vectors
 
 #Visualize
 library(ggfortify)
-pca.plot <- autoplot(pilots.pca, data = pilots, colour = 'Group')
-pca.plot
-ggplot(Task, aes(x=PC1, y=PC2, color=Group)) + 
-  geom_point()
+library(ggplot2)
+pca_res <- prcomp(Task_II, scale. = TRUE)
+
+autoplot(pca_res)
