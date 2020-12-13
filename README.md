@@ -1,6 +1,6 @@
 Task I
-•	You will be working in groups on a quantified student project
-•	Download the Sensor Kinetics Pro app to your iOS or Android device (or similar gyroscope measuring app)
+You will be working in groups on a quantified student project
+Download the Sensor Kinetics Pro app to your iOS or Android device (or similar gyroscope measuring app)
 •	Split into subgroups with each subgroup investigating one measures available in the app
 •	Each subgroup shopuld report back aafter 20min with what they have learned
 Task II
