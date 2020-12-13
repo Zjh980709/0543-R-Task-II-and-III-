@@ -1,3 +1,4 @@
+### Work Done for Task II and Task III
 ### Task I
 * You will be working in groups on a quantified student project
 * Download the *Sensor Kinetics Pro* app to your [iOS](https://itunes.apple.com/us/app/sensor-kinetics-pro/id623633248?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.innoventions.sensorkineticspro&hl=en) device (or similar gyroscope measuring app)
