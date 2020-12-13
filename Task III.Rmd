@@ -1,0 +1,80 @@
+---
+title: "Assignment : Task III"
+author: "Junhao Zhang"
+date: "13/12/2020"
+output: html_document
+---
+
+Thid document contains the work for the Task III
+
+Thsi set of data caotains devise five questions on a five point Likert scale that ask members of your group about their experience with your chosen task
+
+Where;
+Q1	I consider myself a great jumper
+Q2	How often do you exercise?
+Q3	Did you feel tired after jumping for 30 seconds?
+Q4	Do you have any health condition that makes jumping difficult?
+Q5	I consider exercising a joyful activity
+
+
+And five point Likert scale as follows;
+
+strongly agree/everyday :5	
+                        :4	
+                        :3	
+                        :2	
+strongly disagree/rarely:1	
+
+
+Let's import data 
+```{r}
+## Data
+Data=read.csv("Task III.csv", header = TRUE)
+head(Data)
+summary(Data)
+data=na.omit(Data)# omit the missing values
+
+```
+Lets take the covariance matrix of the data to see the interdependencies
+```{r}
+#Covariance matrix of the variables
+S <- cov(data)
+S
+```
+PCA analysis on the data
+```{r}
+#Compute the eigenvalues and corresponding eigenvectors of S.
+
+s.eigen <- eigen(S)
+s.eigen
+``` 
+```{r}
+#proportion of the total variance explained by the components.
+
+for (s in s.eigen$values) {
+  print(s / sum(s.eigen$values))
+}
+
+``` 
+Lets plot the scree plot to identify the PC
+
+#A scree graph of the eigenvalues 
+```{r}
+plot(s.eigen$values, xlab = 'Eigenvalue Number', ylab = 'Eigenvalue Size', main = 'Scree Graph')
+lines(s.eigen$values)
+```
+To write the PC
+```{r}
+s.eigen$vectors
+```
+PC1 = -0.13 Q1 +0.522 Q2 +0.54 Q3 - 0.24 Q4 - 0.60 Q6
+PC1 = -0.13 (I consider myself a great jumper) +0.522 (How often do you exercise?) +0.54 (Did you feel tired after jumping for 30 seconds?) - 0.24 (Do you have any health condition that makes jumping difficult?) - 0.60 (I consider exercising a joyful activity)
+
+Visualize the results
+```{r}
+#Visualize
+library(ggfortify)
+library(ggplot2)
+pca_res <- prcomp(data, scale. = TRUE)
+autoplot(pca_res)
+```
